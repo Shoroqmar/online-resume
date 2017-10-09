@@ -69,8 +69,11 @@ education.display = function() {
     var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools.majors);
       $("#education").append(formattedMajor);
 
-  var formattedDates = HTMLschoolDates.replace("%data%", education.schools.dates);
-      $("#education").append(formattedDates);
+  var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools.dates);
+      $("#education").append(formattedschoolDates);
+     var formattedschoolURL = HTMLschoolurl.replace("%data%", education.schools.url);
+      $("#education").append(formattedschoolURL);
+
 
   $("#education").append(HTMLonlineClasses);
 
@@ -80,8 +83,8 @@ education.display = function() {
   var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses.school);
       $("#education").append(formattedSchool);
 
-  var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses.dates);
-      $("#education").append(formattedDates);
+  var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses.dates);
+      $("#education").append(formattedonlineDates);
 
   var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses.url);
       $("#education").append(formattedURL);
