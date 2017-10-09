@@ -107,14 +107,14 @@ var work = {
       "display": function(){
           var formattedEmployer =HTMLjobsEmployer.replace("%data%",work.jobs.employer);
           $("#work").append(formattedEmployer);
-          var formattedTitle = HTMLjobsTitle.replace("%data%",work.jobs.title);
-          $("#work").append(formattedTitle);
-          var formattedLocation = HTMLjobsLocation.replace("%data%",work.jobs.location);
+          var formattedjobTitle = HTMLjobsTitle.replace("%data%",work.jobs.title);
+          $("#work").append(formattedjobTitle);
+          var formattedjobLocation = HTMLjobsLocation.replace("%data%",work.jobs.location);
           $("#work").append(formattedLocation);
-          var formattedDates = HTMLjobsDates.replace("%data%",work.jobs.dates);
-          $("#work").append(formattedDates);
-          var formattedDescription = HTMLjobsDescription.replace("%data%",work.jobs.description);
-          $("#work").append(formattedDescription);
+          var formattedjobDate = HTMLjobsDates.replace("%data%",work.jobs.dates);
+          $("#work").append(formattedjobDate);
+          var formattedjobDescription = HTMLjobsDescription.replace("%data%",work.jobs.description);
+          $("#work").append(formattedjobDescription);
       }
 };
 
@@ -130,14 +130,14 @@ var project = {
                 ],
 
     "display" : function(){
-         var formattedTitle = HTMLprojectsTitle.replace("%data%",project.projects.title);
-              $("#project").append(formattedTitle); 
-        var formattedDates = HTMLprojectsDates.replace("%data%",project.projects.dates);
-              $("#project").append(formattedDates); 
-        var formattedDescription  = HTMLprojectDescription.replace("%data%",project.projects.description);
-            $("#project").append(formattedDescription);
+         var formattedprojectTitle = HTMLprojectsTitle.replace("%data%",project.projects.title);
+              $("#project").append(formattedprojectTitle); 
+        var formattedprojectDate = HTMLprojectsDates.replace("%data%",project.projects.dates);
+              $("#project").append(formattedprojectDate); 
+        var formattedprojectDescription  = HTMLprojectDescription.replace("%data%",project.projects.description);
+            $("#project").append(formattedprojectDescription);
         var formattedImage = HTMLprojectImage.replace("%data%",project.projects.image);
-            $("#project").append(formattedImage)
+            $("#project").append(formattedImage);
 
 
     } 
