@@ -1,7 +1,7 @@
 /*
 This is empty on purpose! Your code to build the resume will go here.
  */
-var bio { 
+var bio ={ 
     "name" : "Shoroq",
     "role" : "Designer",
     "contact" :{ 
@@ -97,7 +97,7 @@ education.display = function() {
 education.display(); 
 
 
-var work { 
+var work = { 
         "jobs":[
                 {"employer": "Freelancing" } ,
             {"title": "Designer"} ,
@@ -116,11 +116,11 @@ var work {
           var formattedDescription = HTMLjobsDescription.replace("%data%",work.jobs.description);
           $("#work").append(formattedDescription);
       }
-}
+};
 
 
 
-var project { 
+var project = { 
     
     "projects":[
             {"title":"Protfolio"} , 
@@ -141,7 +141,7 @@ var project {
 
 
     } 
-}
+};
 
 
 $("#mapDiv").append(googleMap);
