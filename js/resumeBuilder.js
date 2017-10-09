@@ -52,7 +52,7 @@ var bio ={
            {"degree": "Bachelor"},
            {"majors": ["CIS"]},
            {"dates": "2017"},
-           {"url" : "https://www.najah.edu/en/academic/undergraduate-programs/program/computer-information-systems/info-card/"}]
+           {"url" : "https://www.najah.edu/en/academic/undergraduate-programs/program/computer-information-systems/info-card/"}],
                        
       "onlineCourses":[
          {"title": "Product Design" } ,
@@ -103,7 +103,7 @@ var work = {
             {"title": "Designer"} ,
            {"location": "Earth"}, 
            {"dates": "2017"},
-           {"description": "Graphic designer and UI/UX designer"} ] 
+           {"description": "Graphic designer and UI/UX designer"} ], 
       "display": function(){
           var formattedEmployer =HTMLjobsEmployer.replace("%data%",work.jobs.employer);
           $("#work").append(formattedEmployer);
@@ -127,7 +127,7 @@ var project = {
             {"dates":"2017"},
             {"description": "Responsive site"},
             {"images":["http://shoroqteadiary.eb2a.com/?i=1"]}
-                ]
+                ],
 
     "display" : function(){
          var formattedTitle = HTMLprojectsTitle.replace("%data%",project.projects.title);
