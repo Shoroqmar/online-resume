@@ -47,18 +47,19 @@ var bio ={
 
  var education = {
        "schools" : [
-           {"name": "An-Najah"},
-           {"location": "Nablus - Palestine"},
-           {"degree": "Bachelor"},
-           {"majors": ["CIS"]},
-           {"dates": "2017"},
-           {"url" : "https://www.najah.edu/en/academic/undergraduate-programs/program/computer-information-systems/info-card/"}],
+           {"name": "An-Najah",
+           "location": "Nablus - Palestine",
+           "degree": "Bachelor",
+           "majors": ["CIS"],
+           "dates": "2017",
+           "url" : "https://www.najah.edu/en/academic/undergraduate-programs/program/computer-information-systems/info-card/"
+           }],
                        
       "onlineCourses":[
-         {"title": "Product Design" } ,
-         {"school": "Udacity" } ,
-         {"dates": "2017" },
-         {"url": "https://www.udacity.com/course/product-design--ud509" }]
+       { "title": "Product Design",
+         "school": "Udacity"  ,
+         "dates": "2017" ,
+         "url": "https://www.udacity.com/course/product-design--ud509" }]
          
                } ; 
 education.display = function() { 
@@ -102,8 +103,8 @@ education.display();
 
 var work = { 
         "jobs":[
-                {"employer": "Freelancing" } ,
-            {"title": "Designer"} ,
+           {"employer": "Freelancing" } ,
+           {"title": "Designer"} ,
            {"location": "Earth"}, 
            {"dates": "2017"},
            {"description": "Graphic designer and UI/UX designer"} ], 
@@ -126,10 +127,10 @@ var work = {
 var project = { 
     
     "projects":[
-            {"title":"Protfolio"} , 
-            {"dates":"2017"},
-            {"description": "Responsive site"},
-            {"images":["http://shoroqteadiary.eb2a.com/?i=1"]}
+            {"title":"Protfolio" , 
+            "dates":"2017",
+            "description": "Responsive site",
+            "images":["http://shoroqteadiary.eb2a.com/?i=1"]}
                 ],
 
     "display" : function(){
