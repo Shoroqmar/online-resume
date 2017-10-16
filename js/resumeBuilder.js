@@ -4,16 +4,16 @@ This is empty on purpose! Your code to build the resume will go here.
 var bio ={ 
     "name" : "Shoroq",
     "role" : "Designer",
-    "contact" :{ 
+    "contacts" : { 
           "mobile"  : "0583848505",
           "email"   : "shoroqmarshoud94@gmail.com", 
           "github"  : "Shoroqmar",
           "twitter" : "Shoroq_moh",
-          "location": "Saudi Arabia" } , 
-          "welcomeMessage": "Hello People ", 
-       "skills" :["Graphic Design" , "Design Thinking" , "Leadership","Communication"],
-      "biopic": "images/shoroq.jpg",
-      "display" : function() {
+          "location": "Saudi Arabia" }, 
+    "welcomeMessage": "Hello People ",
+    "skills" :["Graphic Design" , "Design Thinking" , "Leadership","Communication"],
+    "biopic": "images/shoroq.jpg",
+    "display" : function() {
 		var formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
 		$("#header").prepend(formattedHeaderRole);
 		var formattedHeaderName = HTMLheaderName.replace("%data%", bio.name);
@@ -31,19 +31,68 @@ var bio ={
 		var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
 		$("#header").append(formattedPic);
 		
-		if (bio.skills.length > 0) {
+
 			$("#header").append(HTMLskillsStart);
-			var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-			$("#skills").append(formattedSkill);
-			formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-			$("#skills").append(formattedSkill);
-			formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-			$("#skills").append(formattedSkill);
-			formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-			$("#skills").append(formattedSkill);
+        for (var i =0 ;i<bio.skills.length;i++){
+			var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+			$("#skills").append(formattedSkill);			
 		}
       } 
 };
+bio.display();
+
+var work = { 
+        "jobs":[
+            {"employer": "Freelancing" ,
+           "title": "Designer" ,
+           "location": "Palestine", 
+           "dates": "2017",
+           "description": "Graphic designer and UI/UX designer"}
+        ], 
+      "display": function(){
+            $("#header").append(HTMLworkStart);
+for ( var i =0 ;i<work.jobs.length;i++){
+
+          var formattedEmployer =HTMLworkEmployer.replace("%data%",work.jobs[i].employer);
+          $("#work").append(formattedEmployer);
+          var formattedjobTitle = HTMLworkTitle.replace("%data%",work.jobs[i].title);
+          $("#work").append(formattedjobTitle);
+          var formattedjobLocation = HTMLworkLocation.replace("%data%",work.jobs[i].location);
+          $("#work").append(formattedjobLocation);
+          var formattedjobDate = HTMLworkDates.replace("%data%",work.jobs[i].dates);
+          $("#work").append(formattedjobDate);
+          var formattedjobDescription = HTMLworkDescription.replace("%data%",work.jobs[i].description);
+          $("#work").append(formattedjobDescription);
+      }
+}
+};
+work.display();
+
+var project = { 
+    
+    "projects":[
+            {"title":"Protfolio" , 
+            "dates":"2017",
+            "description": "Responsive site",
+            "images":["http://shoroqteadiary.eb2a.com/?i=1"]}
+                ],
+
+    "display" : function(){
+         $("#header").append(HTMLprojectStart);
+for ( var i =0 ;i<project.projects.length;i++){
+         var formattedprojectTitle = HTMLprojectTitle.replace("%data%",project.projects[i].title);
+              $("#project").append(formattedprojectTitle); 
+        var formattedprojectDate = HTMLprojectDates.replace("%data%",project.projects[i].dates);
+              $("#project").append(formattedprojectDate); 
+        var formattedprojectDescription  = HTMLprojectDescription.replace("%data%",project.projects[i].description);
+            $("#project").append(formattedprojectDescription);
+        var formattedImage = HTMLprojectImage.replace("%data%",project.projects[i].image);
+            $("#project").append(formattedImage);
+
+
+    } 
+}};
+project.display();
 
  var education = {
        "schools" : [
@@ -62,35 +111,42 @@ var bio ={
          "url": "https://www.udacity.com/course/product-design--ud509" }]
          
                } ; 
-education.display = function() { 
-    var formattedsName = HTMLschoolName.replace("%data%",education.schools.name);
-    $("#education").append(formattedName);
-    var formattedLocation =HTMLschoolLocation.replace("%data%",education.schools.Location);
-    $("#education").append=HTMLschoolDegree.replace("%data%",education.schools.Degree);
-    var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools.majors);
+education.display = function() {
+        $("#header").append(HTMLschoolStart);
+
+for ( var i =0 ;i<education.schools.length;i++){
+
+    var formattedsName = HTMLschoolName.replace("%data%",education.schools[i].name);
+    $("#education").append(formattedsName);
+    var formattedLocation =HTMLschoolLocation.replace("%data%",education.schools[i].Location);
+    $("#education").append(formattedLocation);
+    var formattedDegree = HTMLschoolDegree.replace("%data%",education.schools[i].Degree);
+    $("#education").append(formattedDegree);
+//    for (var j=0; j<education.schools.majors.length;j++){
+    var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
       $("#education").append(formattedMajor);
-
-  var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools.dates);
+    ;
+  var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
       $("#education").append(formattedschoolDates);
-     var formattedschoolURL = HTMLschoolurl.replace("%data%", education.schools.url);
+     var formattedschoolURL = HTMLschoolurl.replace("%data%", education.schools[i].url);
       $("#education").append(formattedschoolURL);
+    
 
-
-  $("#education").append(HTMLonlineClasses);
-
-  var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses.title);
+};
+for ( var i =0 ;i<education.onlineCourses.length;i++){
+  var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title);
       $("#education").append(formattedTitle);
 
-  var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses.school);
+  var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
       $("#education").append(formattedSchool);
 
-  var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses.dates);
+  var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
       $("#education").append(formattedonlineDates);
 
-  var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses.url);
+  var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url);
       $("#education").append(formattedURL);
 
-
+};
  
 
 
@@ -101,53 +157,7 @@ education.display = function() {
 education.display(); 
 
 
-var work = { 
-        "jobs":[
-           {"employer": "Freelancing" } ,
-           {"title": "Designer"} ,
-           {"location": "Earth"}, 
-           {"dates": "2017"},
-           {"description": "Graphic designer and UI/UX designer"} ], 
-      "display": function(){
-          var formattedEmployer =HTMLjobsEmployer.replace("%data%",work.jobs.employer);
-          $("#work").append(formattedEmployer);
-          var formattedjobTitle = HTMLjobsTitle.replace("%data%",work.jobs.title);
-          $("#work").append(formattedjobTitle);
-          var formattedjobLocation = HTMLjobsLocation.replace("%data%",work.jobs.location);
-          $("#work").append(formattedLocation);
-          var formattedjobDate = HTMLjobsDates.replace("%data%",work.jobs.dates);
-          $("#work").append(formattedjobDate);
-          var formattedjobDescription = HTMLjobsDescription.replace("%data%",work.jobs.description);
-          $("#work").append(formattedjobDescription);
-      }
-};
-
-
-
-var project = { 
-    
-    "projects":[
-            {"title":"Protfolio" , 
-            "dates":"2017",
-            "description": "Responsive site",
-            "images":["http://shoroqteadiary.eb2a.com/?i=1"]}
-                ],
-
-    "display" : function(){
-         var formattedprojectTitle = HTMLprojectsTitle.replace("%data%",project.projects.title);
-              $("#project").append(formattedprojectTitle); 
-        var formattedprojectDate = HTMLprojectsDates.replace("%data%",project.projects.dates);
-              $("#project").append(formattedprojectDate); 
-        var formattedprojectDescription  = HTMLprojectDescription.replace("%data%",project.projects.description);
-            $("#project").append(formattedprojectDescription);
-        var formattedImage = HTMLprojectImage.replace("%data%",project.projects.image);
-            $("#project").append(formattedImage);
-
-
-    } 
-};
-
-
+   
 $("#mapDiv").append(googleMap);
 
 
